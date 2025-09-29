@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Medical Certificate</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .certificate {
+      border: 2px solid #000;
+      padding: 20px;
+      background-image: url('Logo.png');
+      width: 450px;
+      height: 400px;
+      margin: 50px auto;
+      background-color: #8799dc;
+    }
+    button {
+      display: block;
+      margin: 20px auto;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="certificate">
+    
+    <h2>Medical Certificate</h2>
+    <p><strong>Name:</strong> <span id="certName"></span></p>
+    <p><strong>Date of Birth:</strong> <span id="certDOB"></span></p>
+    <p><strong>Gender:</strong> <span id="certGender"></span></p>
+    <p><strong>Blood Group:</strong> <span id="certBlood"></span></p>
+    <p><strong>City:</strong> <span id="certCity"></span></p>
+    <p><strong>Medical Conditions / Comments:</strong></p>
+    <p><span id="certComments"></span></p>
+    <p><strong>Certified On:</strong> <span id="certDate"></span></p>
+  </div>
+
+  <button onclick="window.print()">Print Certificate</button>
+
+  <script>
+    document.getElementById('certName').innerText = localStorage.getItem('fullName');
+    document.getElementById('certDOB').innerText = localStorage.getItem('dob');
+    document.getElementById('certGender').innerText = localStorage.getItem('gender');
+    document.getElementById('certBlood').innerText = localStorage.getItem('bloodGroup');
+    document.getElementById('certCity').innerText = localStorage.getItem('city');
+    document.getElementById('certComments').innerText = localStorage.getItem('comments') || 'None';
+    document.getElementById('certDate').innerText = new Date().toLocaleDateString();
+  </script>
+ <footer>
+        <div class="container">
+            <p>&copy; 2025 Vein Connect. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
